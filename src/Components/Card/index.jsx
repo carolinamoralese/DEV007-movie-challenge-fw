@@ -1,7 +1,15 @@
+import { useContext } from "react"
+import { MovieContext } from "../../Context"
+
+
 function Card({movie}){
   const imageUrl = "https://image.tmdb.org/t/p/original"
-    return(
-        <div className="bg-white cursor-pointer w-60 h-65 rounded-lg">
+  const context = MovieContext.Consumer;
+
+  return(
+        <div
+        className="bg-white cursor-pointer w-60 h-65 rounded-lg"
+        onClick={() => context.abrirDetallePelicula()}>
         <figure className="relative mb-4 w-full h-5/6 flex flex-col justify-center items-center">
           <img
             className="w-full h-full rounded-lg"
