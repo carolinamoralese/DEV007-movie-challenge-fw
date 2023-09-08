@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "../../Components/Card";
 import Layout from "../../Components/Layout";
+import DetallePelicula from "../../Components/DetallePelicula";
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -27,6 +28,7 @@ function Home() {
           <Card key={movie.id} movie={movie} />
         ))}
       </div>
+      <DetallePelicula />
     </Layout>
   );
 }
