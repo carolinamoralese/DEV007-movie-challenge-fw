@@ -8,7 +8,7 @@ function Card({movie}){
 
   return(
         <div
-        className="bg-white cursor-pointer w-60 h-65 rounded-lg"
+        className="bg-white cursor-pointer w-60 h-65 rounded-lg transform transition-transform hover:scale-105"
         onClick={() => context.abrirDetallePelicula()}>
         <figure className="relative mb-4 w-full h-5/6 flex flex-col justify-center items-center">
           <img
@@ -19,7 +19,7 @@ function Card({movie}){
           />
         </figure>
         <p className="flex flex-col items-center">
-          <span className="text-s items-center font-medium mr-2 line-clamp-2">
+          <span className="text-s items-center font-medium mr-2 line-clamp-1">
             {movie.title}
           </span>
           {/* <span className="text-xs font-light mr-2">{movie.release_date}</span> */}
