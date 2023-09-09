@@ -11,31 +11,31 @@ function Navbar() {
               to="/"
               className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Home
+              Populares
             </NavLink>
           </li>
           <li className="text-lg">
             <NavLink
-              to="/genero"
+              to="/cartelera"
               className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Genero
+              Peliculas en Cartelera
             </NavLink>
           </li>
           <li className="text-lg">
             <NavLink
-              to="/idioma"
+              to="/upcoming"
               className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Idioma
+              Proximos Estrenos
             </NavLink>
           </li>
           <li className="text-lg">
             <NavLink
-              to="/puntaje"
+              to="/mejor-calificada"
               className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Puntaje
+              Destacadas
             </NavLink>
           </li>
         </ul>
