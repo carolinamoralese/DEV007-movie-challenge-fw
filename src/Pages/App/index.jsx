@@ -1,9 +1,9 @@
 import { useRoutes, BrowserRouter } from "react-router-dom";
 import Home from "../Home/Index.jsx";
-import Genero from "../Genero/index.jsx";
-import Idioma from "../Idioma/index.jsx";
+import PeliculasEnCartelera from "../PeliculasEnCartelera/index.jsx";
+import ProximosEstrenos from "../ProximosEstrenos/index.jsx";
 import NotFound from "../NotFound/index.jsx";
-import Puntaje from "../Puntaje/index.jsx";
+import PeliculasDestacadas from "../PeliculasDestacadas/index.jsx";
 import Navbar from "../../Components/Navbar/index.jsx";
 import "./App.css";
 
@@ -15,20 +15,20 @@ const AppRoutes = () => {
       element: <Home />,
     },
     {
-      path: "/genero",
-      element: <Genero />,
+      path: "/cartelera",
+      element: <PeliculasEnCartelera />,
     },
     {
-      path: "/idioma",
-      element: <Idioma />,
+      path: "/upcoming",
+      element: <ProximosEstrenos />,
     },
     {
       path: "/*",
       element: <NotFound />,
     },
     {
-      path: "/puntaje",
-      element: <Puntaje />,
+      path: "/mejor-calificada",
+      element: <PeliculasDestacadas />,
     },
   ]);
 
