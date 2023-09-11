@@ -1,5 +1,3 @@
-import React from "react";
-
 function Modal({ isOpen, closeModal, movie }) {
   const imageUrl = "https://image.tmdb.org/t/p/original";
 
@@ -13,14 +11,14 @@ function Modal({ isOpen, closeModal, movie }) {
         className="modal-overlay bg-black opacity-75 absolute inset-0"
         onClick={closeModal}
       />
-      <div className="bg-white w-4/5 h-3/5 rounded-lg shadow-lg relative">
+      <div className="bg-white w-3/5 h-3/5 rounded-lg shadow-lg relative">
         {/* Contenido del modal */}
         <div className="grid grid-cols-2 gap-2 p-4">
           <div className="col-span-1">
-            <img
+            <img className="relative"
               src={`${imageUrl + movie.poster_path}`}
               alt={movie.overview}
-              style={{ maxWidth: "65%" }}
+              style={{ maxWidth: "60%"}}
             />
           </div>
           <div className="col-span-1">
@@ -30,9 +28,10 @@ function Modal({ isOpen, closeModal, movie }) {
             >
               X
             </button>
-            <h2 className="text-3xl font-bold mb-2">{movie.title}</h2>
+            <h2 className="text-3xl font-bold mb-2 right-0">{movie.title}</h2>
             <p className="text-xl mb-4">{movie.release_date}</p>
-            <p>{movie.overview}</p>
+            <p className="text-justify pr-4">{movie.overview}</p>
+          
           </div>
         </div>
       </div>
