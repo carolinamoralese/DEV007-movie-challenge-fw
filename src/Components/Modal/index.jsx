@@ -15,7 +15,7 @@ function Modal({ isOpen, closeModal, movie }) {
         {/* Contenido del modal */}
         <div className="grid grid-cols-2 gap-2 p-4">
           <div className="col-span-1">
-            <img
+            <img className="relative"
               src={`${imageUrl + movie.poster_path}`}
               alt={movie.overview}
               style={{ maxWidth: "60%"}}
@@ -31,6 +31,7 @@ function Modal({ isOpen, closeModal, movie }) {
             <h2 className="text-3xl font-bold mb-2 right-0">{movie.title}</h2>
             <p className="text-xl mb-4">{movie.release_date}</p>
             <p className="text-justify pr-4">{movie.overview}</p>
+          
           </div>
         </div>
       </div>

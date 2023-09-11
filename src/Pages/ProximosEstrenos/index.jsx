@@ -1,23 +1,18 @@
 import { useState, useEffect } from "react";
 import Card from "../../Components/Card";
 import Layout from "../../Components/Layout";
+import { peticionMostrarPeliculas } from "../../Components/servicios/peticion";
 
 function ProximosEstrenos() {
   const [movies, setMovies] = useState([]);
-  const apiKey = "9399d9ba15211a26c3c2ff8ecbb4bab2";
-  const baseUrl = "https://api.themoviedb.org/3/";
   const endpoint = "movie/upcoming";
-  const apiUrl = `${baseUrl}${endpoint}?api_key=${apiKey}`;
-  console.log(apiUrl, 90);
-
+    
   useEffect(() => {
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => setMovies(data.results))
-      .catch((error) => {
-        console.error("Error al realizar la solicitud:", error);
-      });
-  }, [apiUrl]);
+    peticionMostrarPeliculas(endpoint).then((responseJson) => {
+      setMovies(responseJson);
+    });
+  }, []);
+
 
   console.log(movies);
   return (
