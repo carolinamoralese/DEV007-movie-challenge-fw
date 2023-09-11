@@ -11,7 +11,7 @@ function Navbar() {
               to="/cartelera"
               className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Peliculas en Cartelera
+              Películas en Cartelera
             </NavLink>
           </li>
           <li className="text-lg">
@@ -27,7 +27,7 @@ function Navbar() {
               to="/upcoming"
               className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Proximos Estrenos
+              Próximos Estrenos
             </NavLink>
           </li>
           <li className="text-lg">
