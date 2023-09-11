@@ -1,0 +1,7 @@
+.modal{
+    width: 500px;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    top: 100px;
+  }
+  

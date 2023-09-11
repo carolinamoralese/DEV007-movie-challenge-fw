@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "../../Components/Card";
 import Layout from "../../Components/Layout";
-import DetallePelicula from "../../Components/DetallePelicula";
+
 
 function PeliculasEnCartelera() {
   const [movies, setMovies] = useState([]);
@@ -28,7 +28,7 @@ function PeliculasEnCartelera() {
           <Card key={movie.id} movie={movie} />
         ))}
       </div>
-      <DetallePelicula />
+      {/* <DetallePelicula /> */}
     </Layout>
   );
 }
