@@ -5,8 +5,8 @@ import ProximosEstrenos from "../ProximosEstrenos/index.jsx";
 import NotFound from "../NotFound/index.jsx";
 import PeliculasDestacadas from "../PeliculasDestacadas/index.jsx";
 import Navbar from "../../Components/Navbar/index.jsx";
+import { MostarPeliculasProvider } from "../../Context/index.jsx";
 import "./App.css";
-
 
 const AppRoutes = () => {
   let router = useRoutes([
@@ -38,8 +38,10 @@ const AppRoutes = () => {
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <AppRoutes />
+      <MostarPeliculasProvider>
+        <Navbar />
+        <AppRoutes />
+      </MostarPeliculasProvider>
     </BrowserRouter>
   );
 }
