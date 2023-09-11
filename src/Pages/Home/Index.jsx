@@ -15,7 +15,8 @@ function Home() {
   }, []);
 
   return (
-   <Renderizado />
+   <Renderizado >
+   </Renderizado>
   );
 }
 
