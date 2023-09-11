@@ -45,6 +45,7 @@ export const MostarPeliculasProvider = ({ children }) => {
     }
   }, [movies, buscarPeliculas]);
 
+
   return (
     <MostarPeliculasContext.Provider
       value={{
