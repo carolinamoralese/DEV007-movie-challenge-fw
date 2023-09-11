@@ -1,30 +1,40 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Card from "../../Components/Card";
 import Layout from "../../Components/Layout";
 import { peticionMostrarPeliculas } from "../../Components/servicios/peticion";
-
+import { useContext } from "react";
+import { MostarPeliculasContext } from "../../Context";
+import Modal from "../../Components/Modal";
 
 function PeliculasEnCartelera() {
-  const [movies, setMovies] = useState([]);
+  const context = useContext(MostarPeliculasContext);
   const endpoint = "/movie/now_playing";
-    
+
   useEffect(() => {
     peticionMostrarPeliculas(endpoint).then((responseJson) => {
-      setMovies(responseJson);
+      context.setMovies(responseJson);
     });
   }, []);
 
-  console.log(movies);
   return (
     <Layout>
       <div className="flex flex-wrap">
-        {movies.map((movie) => (
-          <Card key={movie.id} movie={movie} />
+        {context.movies.map((movie) => (
+          <Card
+            key={movie.id}
+            movie={movie}
+            onCardClick={() => context.openModal(movie)}
+          />
         ))}
       </div>
-      {/* <DetallePelicula /> */}
+      {context.isModalOpen && (
+        <Modal
+          isOpen={context.isModalOpen}
+          closeModal={context.closeModal}
+          movie={context.selectedMovie}
+        />
+      )}
     </Layout>
   );
 }
-
 export default PeliculasEnCartelera;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Card from "../../Components/Card";
 import Layout from "../../Components/Layout";
 import { peticionMostrarPeliculas } from "../../Components/servicios/peticion";
@@ -9,7 +9,6 @@ import Modal from "../../Components/Modal";
 
 function PeliculasDestacadas() {
   const context = useContext(MostarPeliculasContext);
-  // const [movies, setMovies] = useState([]);
   const endpoint = "/movie/top_rated";
     
   useEffect(() => {
@@ -18,7 +17,6 @@ function PeliculasDestacadas() {
     });
   }, []);
 
-  console.log(context.movies);
   return (
     <Layout>
       <div className="flex flex-wrap">
@@ -33,7 +31,6 @@ function PeliculasDestacadas() {
           movie={context.selectedMovie}
         />
       )}
-      {/* <DetallePelicula /> */}
     </Layout>
   );
 }

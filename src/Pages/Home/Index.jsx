@@ -8,28 +8,13 @@ import { MostarPeliculasContext } from "../../Context";
 
 function Home() {
   const context = useContext(MostarPeliculasContext);
-  console.log(context,101)
-  // const [movies, setMovies] = useState([]);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [selectedMovie, setSelectedMovie] = useState(null);
   const endpoint = "movie/popular";
 
   useEffect(() => {
     peticionMostrarPeliculas(endpoint).then((responseJson) => {
-      // setMovies(responseJson);
       context.setMovies(responseJson)
     });
   }, []);
-
-  // const openModal = (movie) => {
-  //   setSelectedMovie(movie);
-  //   setIsModalOpen(true);
-  // };
-
-  // const closeModal = () => {
-  //   setSelectedMovie(null);
-  //   setIsModalOpen(false);
-  // };
 
   return (
     <Layout>
